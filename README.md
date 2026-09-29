@@ -20,6 +20,10 @@ Crypto prices are noisy. Looking at price alone does not tell you how much risk 
 - Sharpe-style risk-adjusted return metric
 - EWMA volatility estimation
 - GARCH(1,1) seven-period volatility forecast
+- Cross-asset daily-return correlation heatmap
+- SQLite market-data persistence
+- EWMA forecast backtesting with MAE/RMSE
+- FastAPI risk endpoints
 - Interactive Plotly charts
 - Streamlit caching and API error handling
 - Unit tests with pytest
@@ -80,6 +84,9 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 streamlit run dashboard.py
+
+# Optional REST API
+uvicorn api:app --reload
 ```
 
 ## Methodology
@@ -128,11 +135,9 @@ Every push and pull request runs the test suite through GitHub Actions.
 
 ## Roadmap
 
-- Multi-asset comparison and correlation heatmap
-- Persistent market-data storage
-- Forecast backtesting and model-error metrics
-- REST API
 - Hosted public demo
+- Additional forecast-model comparisons
+- Optional authenticated market-data provider
 
 ## Author
 
